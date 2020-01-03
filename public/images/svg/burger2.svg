@@ -1,0 +1,18 @@
+<svg id="Burger" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="51" height="33" viewBox="0 0 51 33">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="51" height="33" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Repeat_Grid_1" data-name="Repeat Grid 1" clip-path="url(#clip-path)">
+    <g transform="translate(-56 -32)">
+      <rect id="Rectangle_1" data-name="Rectangle 1" width="51" height="3" transform="translate(56 32)" fill="#335062"/>
+    </g>
+    <g transform="translate(-56 -19)">
+      <rect id="Rectangle_1-2" data-name="Rectangle 1" width="51" height="3" transform="translate(56 32)" fill="#335062"/>
+    </g>
+    <g transform="translate(-56 -6)">
+      <rect id="Rectangle_1-3" data-name="Rectangle 1" width="51" height="3" transform="translate(56 32)" fill="#335062"/>
+    </g>
+  </g>
+</svg>

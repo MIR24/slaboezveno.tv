@@ -1,0 +1,879 @@
+/* Экстрамалые девайсы («телефоны», < 576px)
+// Нет @media, т.к. это по умолчанию в Bootstrap
+
+/* Малые девайсы («ландшафтные телефоны», >= 576px)*/
+
+@media (max-width: 576px) {
+.footerTag2 {
+		text-align: left!important;
+	}
+	.Question {
+	  height: calc(80vh - 45px);
+	}
+	.Question_text {
+    font-size: 25px;
+	}
+
+	.QuestionNumber {
+    font-size: 30px;
+    margin: 0em 0;
+
+	}
+
+.points {
+        height: 45px!important;
+    font-size: 24px;
+    line-height: 58px;
+    padding: 0;
+        background-size: 135%;
+
+}
+
+	.sucsess {
+    text-transform: none;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    font-size:15px;
+}
+
+.timer {
+    font-size: 45px;
+}
+
+.buttonMainStyle5Reset, .buttonMainStyle5{
+    font-size: 12px;
+
+}
+
+.buttonMainStyle6 {
+    font-size: 25px;
+    height: 60px;
+    max-width: 300px;
+}
+
+.buttonMainStyle7 {
+font-size: 16px;
+    height: 48px;
+    max-width: 400px;
+}
+.middle-Spacer{
+    height: 10vh;
+}
+
+.buttonMainStyle2{
+font-size: 20px;
+    height: 55px;
+    padding: 10px;
+    max-width: 300px;
+}
+
+.footerTag1 {
+    padding: 20px 10px 0 7px;
+    line-height: 11px;
+    font-size: 11px;
+}
+
+.dig {
+    font-size: 150px;
+}
+
+
+.tags {
+    font-size: 30px;
+    /*font-size: 51px;
+    line-height: 55px;*/
+    line-height: 30px;
+}
+
+.subtag {
+    font-size: 22px;
+    line-height: 20px;
+    top: 135px;
+    width: 160px;
+    /*
+
+    font-size: 30px;
+    line-height: 33px;
+    left: 90px;
+    top: 217px;
+    */
+}
+
+
+.header2 {
+  /*  font-size: 56px;*/
+ font-size: 32px;
+}
+.header1 {
+    font-size: 19px;    /*font-size: 24px;*/
+}
+
+.tag1 {
+    font-size: 20px;
+    padding: 20px;
+}
+#dig1{        top: 0px;    left: 36px;}
+#dig2{        top: 0px;    left: 36px;}
+#dig3{         top: 0px;    left: 36px;}
+#dig4{         top: 0px;    left: 36px;}
+
+
+#subdig1 {    top: 75px;    left: 86px;}
+#subdig2{   top: 75px;    left: 86px;}
+#subdig3{   top: 75px;    left: 86px;}
+#subdig4{   top: 75px;    left: 86px;}
+
+.iImSpacer100px{height:20px;}.iImSpacer60px{height:20px;}
+
+.dig_here { /*height: 290px;*/ height: auto;/*height: 200px;*/}
+
+.bg_block,.navbar-nav{
+background: url(/images/mobile_bg.png) center center no-repeat;
+background-size:cover;
+
+}
+.block1 {
+    background-size: cover;
+}
+
+.footerTag3 {
+    padding: 5px 0px 4px 0px;
+    line-height: 14px;
+    font-size: 12px;
+}
+
+.sm_buttons img {
+    width: 60%;
+}
+
+
+.footerTag2 {
+    padding: 10px 10px 5px 10px;
+    line-height: 15px;
+    font-size: 15px;
+}
+.rulers_link{font-size: 70%;}
+
+
+.nav-item {
+    padding-top: 6vh!important;
+    text-align: center!important;
+    font-size: 200%;
+}
+
+
+
+label {
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 576px) {
+	.footerTag2 {
+		text-align: left!important;
+	}
+	.Question {
+	  height: calc(80vh - 45px);
+	}
+	.Question_text {
+    font-size: 25px;
+	}
+
+	.QuestionNumber {
+    font-size: 30px;
+    margin: 0em 0;
+
+	}
+
+.points {
+        height: 45px!important;
+    font-size: 24px;
+    line-height: 58px;
+    padding: 0;
+        background-size: 135%;
+
+}
+
+
+	.sucsess {
+    text-transform: none;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+    font-size: 15px;
+}
+
+.timer {
+    font-size: 45px;
+}
+
+.buttonMainStyle5Reset, .buttonMainStyle5{
+    font-size: 12px;
+
+}
+
+.buttonMainStyle6 {
+    font-size: 25px;
+    height: 60px;
+    max-width: 300px;
+}
+
+.buttonMainStyle7 {
+    font-size: 25px;
+    height: 60px;
+    max-width: 400px;
+}
+.middle-Spacer{
+    height: 10vh;
+}
+
+.buttonMainStyle2{
+font-size: 20px;
+    height: 55px;
+    padding: 10px;
+    max-width: 300px;
+}
+
+.tags {
+    font-size: 30px;
+    /*font-size: 51px;
+    line-height: 55px;*/
+    line-height: 30px;
+}
+
+.subtag {
+    font-size: 22px;
+    line-height: 20px;
+    top: 90px;
+    width: 160px;
+    /*
+
+    font-size: 30px;
+    line-height: 33px;
+    left: 90px;
+    top: 217px;
+    */
+}
+
+.header2 {
+  /*  font-size: 56px;*/
+ font-size: 32px;
+}
+.header1 {
+    font-size: 19px;    /*font-size: 19px;*/
+}
+.tag1 {
+    font-size: 20px;
+    padding: 20px;
+}
+
+#dig1{    top: -4px;left: 66px;}
+#dig2{   top: -4px;left: 66px;}
+#dig3{   top: -4px;left: 66px;}
+#dig4{   top: -4px;left: 66px;}
+
+
+#subdig1 {top: 96px;left: 86px;}
+#subdig2{top: 96px;left: 86px;}
+#subdig3{top: 96px;left: 86px;}
+#subdig4{top: 96px;left: 86px;}
+
+
+.dig_here { /*height: 290px;*/ height:200px;}
+
+.iImSpacer100px{height:50px;}
+
+.bg_block,.navbar-nav{
+background: url(/images/mobile_bg.png) center center no-repeat;
+background-size:cover;
+}
+.block1 {
+    background-size: cover;
+}
+
+
+.footerTag3 {
+    padding: 5px 0px 4px 0px;
+    line-height: 14px;
+    font-size: 12px;
+}
+.sm_buttons img {
+    width: 60%;
+}
+
+.footerTag2 {
+    padding: 10px 10px 5px 10px;
+    line-height: 15px;
+    font-size: 15px;
+}
+
+.rulers_link{font-size: 70%;}
+
+.nav-item {
+    padding-top: 2vh!important;
+    text-align: center!important;
+    font-size: 200%;
+}
+
+label {
+    margin-bottom: 0;
+    font-size: 13px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Средние девайсы («таблетки», >= 768px)*/
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+	.footerTag2 {
+		text-align: left!important;
+	}
+	.Question {
+	    height:auto;
+	}
+	.Question_text {
+    font-size: 25px;
+	}
+
+	.QuestionNumber {
+    font-size: 30px;
+    margin: 0em 0;
+
+	}
+
+	.points {
+    height: 8vh!important;
+    font-size: 35px;
+    line-height: 75px;
+        background-size: contain;
+	}
+
+
+	.sucsess {
+    text-transform: none;
+    width: 90%;
+    margin: 0 auto;
+    padding: 25px;
+        font-size: 25px;
+}
+
+.timer {
+    font-size: 45px;
+}
+
+.buttonMainStyle5Reset, .buttonMainStyle5{
+    	font-size: 26px;
+}
+
+.buttonMainStyle6,.buttonMainStyle7{
+    	font-size: 36px;
+    height: 85px;
+    max-width: 400px;
+}
+.middle-Spacer{
+    height: 5vh;
+}
+
+.buttonMainStyle2{
+    font-size: 29px;
+    height: 85px;
+    max-width: 400px;
+    	padding: 20px 10px;
+}
+
+.footerTag1 {
+    padding: 20px 10px 0 7px;
+    line-height: 22px;
+    font-size: 17px;
+}
+
+.footerTag1 {
+    padding: 20px 10px 0 7px;
+    line-height: 11px;
+    font-size: 11px;
+}
+
+.tags {
+font-size: 51px;
+    line-height: 55px;
+
+}
+
+.subtag {
+    /*
+    font-size: 22px;
+    line-height: 20px;
+    top: 161px;
+    width: 160px; */
+
+
+    font-size: 30px;
+    line-height: 33px;
+    left: 90px;
+    top: 217px;
+
+}
+
+.header2 {
+    font-size: 56px;
+ /*font-size: 36px;*/
+}
+.header1 {
+    font-size: 24px;    /*font-size: 19px;*/
+}
+.tag1 {
+    font-size: 24px;
+    padding: 10px;
+}
+#dig1{top: -56px;left: 0px;}
+#dig2{top: -56px;left: 0px;}
+#dig3{top: -56px;left: 0px;}
+#dig4{top: -56px;left: 0px;}
+
+
+#subdig1 {top: 96px;left: 86px;}
+#subdig2{top: 96px;left: 86px;}
+#subdig3{top: 96px;left: 86px;}
+#subdig4{top: 96px;left: 86px;}
+
+
+
+.dig_here { /*height: 180px;*/ height: 290px;}
+.iImSpacer100px{height:100px;}.iImSpacer60px{height:60px;}
+
+.bg_block,.navbar-nav{
+background: url(/images/bg_fade.jpg) center center no-repeat;
+background-size:contain;
+    background-color: #081420;
+}
+
+.block1 {
+    background-size: contain;
+}
+
+.footerTag1 {
+    padding: 20px 10px 0 7px;
+    line-height: 22px;
+    font-size: 17px;
+}
+
+.footerTag3 {
+    padding: 35px 10px 44px 0px;
+    line-height: 29px;
+    font-size: 18px;
+}
+.sm_buttons img {
+    width: 80%;
+}
+
+.footerTag2 {
+    padding: 39px 20px 35px 7px;
+    line-height: 22px;
+    font-size: 26px;
+}
+.rulers_link{font-size: 70%;}
+.nav-item {
+    padding-top: 2vh!important;
+    text-align: center!important;
+    font-size: 200%;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+}
+
+
+
+
+
+
+
+
+
+
+/* Большие девайсы (десктопы, >= 992px)*/
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 992px) {
+	.footerTag2 {
+		text-align: left!important;
+	}
+	.Question {
+	    height:auto;
+	}
+	.Question_text {
+    font-size: 40px;
+	}
+
+	.QuestionNumber {
+    font-size: 50px;
+    margin: 0em 0;
+
+	}
+
+	.points {
+    height: 8vh!important;
+    font-size: 45px;
+    line-height: 45px;
+	}
+
+
+	.sucsess {
+    text-transform: none;
+    width: 90%;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.timer {
+    font-size: 45px;
+}
+
+.buttonMainStyle5Reset, .buttonMainStyle5{
+    	font-size: 26px;
+}
+
+.buttonMainStyle6,.buttonMainStyle7{
+    	font-size: 36px;
+    height: 85px;
+    max-width: 400px;
+}
+
+.buttonMainStyle2{
+    font-size: 29px;
+    height: 85px;
+    max-width: 400px;
+    	padding: 20px 10px;
+}
+
+.middle-Spacer{
+    height: 10vh;
+}
+.tags {
+font-size: 51px;
+    line-height: 55px;
+
+}
+
+.subtag {
+    /*
+    font-size: 22px;
+    line-height: 20px;
+    top: 161px;
+    width: 160px; */
+
+
+    font-size: 30px;
+    line-height: 33px;
+    left: 90px;
+    top: 217px;
+
+}
+
+.header2 {
+    font-size: 56px;
+ /*font-size: 36px;*/
+}
+.header1 {
+    font-size: 24px;    /*font-size: 19px;*/
+}
+.tag1 {
+    font-size: 24px;
+    padding: 10px;
+}
+
+#dig1{top: -56px;left: 0px;}
+#dig2{top: -56px;left: 0px;}
+#dig3{top: -56px;left: 0px;}
+#dig4{top: -56px;left: 0px;}
+
+
+#subdig1 {top: 96px;left: 86px;}
+#subdig2{top: 96px;left: 86px;}
+#subdig3{top: 96px;left: 86px;}
+#subdig4{top: 96px;left: 86px;}
+
+
+.dig_here { /*height: 180px;*/ height: 290px;}
+.iImSpacer100px{height:100px;}.iImSpacer60px{height:30px;}
+
+.bg_block,.navbar-nav{
+background: url(/images/bg_fade.jpg) center center no-repeat;
+background-size:contain;
+    background-color: #081420;
+}
+
+.block1 {
+    background-size: contain;
+}
+
+.footerTag1 {
+    padding: 20px 10px 0 7px;
+    line-height: 22px;
+    font-size: 17px;
+}
+
+.footerTag3 {
+    padding: 35px 10px 44px 0px;
+    line-height: 29px;
+    font-size: 18px;
+}
+
+.sm_buttons img {
+    width: 100%;
+}
+
+.footerTag2 {
+    padding: 39px 20px 35px 7px;
+    line-height: 22px;
+    font-size: 26px;
+}
+.rulers_link{font-size: 100%;}
+.nav-item {
+    padding-top: 2vh!important;
+    text-align: center!important;
+    font-size: 200%;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Экстрабольшие девайсы (большие десктопы, >= 1200px)*/
+/* ///////////////////////////////////////////////////////////////////////////////////*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1200px) {
+	.footerTag2 {
+		text-align: left!important;
+	}
+	.Question {
+	    height:auto;
+	}
+	.Question_text {
+    font-size: 40px;
+	}
+
+	.QuestionNumber {
+    font-size: 50px;
+    margin: 0em 0;
+
+	}
+
+	.points {
+    height: 8vh!important;
+    font-size: 45px;
+    line-height: 45px;
+        background-size: contain;
+	}
+
+
+	.sucsess {
+    text-transform: none;
+    width: 90%;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.timer {
+    font-size: 45px;
+}
+
+
+.buttonMainStyle5Reset, .buttonMainStyle5{
+    	font-size: 26px;
+}
+
+.buttonMainStyle6{
+    	font-size: 36px;
+    height: 85px;
+    max-width: 400px;
+}
+.buttonMainStyle7{
+
+
+    width: 100%;
+    font-size: 36px;
+    height: 75px;
+    max-width: 500px;
+}
+
+.buttonMainStyle2{
+    font-size: 29px;
+    height: 85px;
+    max-width: 400px;
+    	padding: 20px 10px;
+}
+
+.middle-Spacer{
+    height: 10vh;
+}
+.tags {
+font-size: 51px;
+    line-height: 55px;
+
+}
+
+.subtag {
+    /*
+    font-size: 22px;
+    line-height: 20px;
+    top: 161px;
+    width: 160px; */
+
+
+    font-size: 30px;
+    line-height: 33px;
+    left: 90px;
+    top: 217px;
+
+}
+.header2 {
+    font-size: 56px;
+ /*font-size: 36px;*/
+}
+.header1 {
+    font-size: 24px;    /*font-size: 19px;*/
+}
+.tag1 {
+    font-size: 24px;
+    padding: 10px;
+}
+#dig1{top: -56px;left: 0px;}
+#dig2{top: -56px;left: 0px;}
+#dig3{top: -56px;left: 0px;}
+#dig4{top: -56px;left: 0px;}
+
+
+#subdig1 {top: 96px;left: 86px;}
+#subdig2{top: 96px;left: 86px;}
+#subdig3{top: 96px;left: 86px;}
+#subdig4{top: 96px;left: 86px;}
+
+
+.dig_here { /*height: 180px;*/ height: 290px;}
+.iImSpacer100px{height:100px;}.iImSpacer60px{height:60px;}
+
+.bg_block,.navbar-nav{
+background: url(/images/bg_fade.jpg) center center no-repeat;
+background-size:contain;
+    background-color: #081420;
+}
+.block1 {
+    background-size: contain;
+}
+.footerTag1 {
+    padding: 20px 10px 0 7px;
+    line-height: 22px;
+    font-size: 17px;
+}
+
+.footerTag3 {
+    padding: 35px 10px 44px 0px;
+    line-height: 29px;
+    font-size: 18px;
+}
+.sm_buttons img {
+    width: 100%;
+}
+
+.footerTag2 {
+    padding: 39px 20px 35px 7px;
+    line-height: 22px;
+    font-size: 26px;
+}
+
+.rulers_link{font-size: 100%;}
+.nav-item {
+    padding-top: 2vh!important;
+    text-align: center!important;
+    font-size: 200%;
+}
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+}
