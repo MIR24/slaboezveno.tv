@@ -7,7 +7,10 @@ namespace App\Service\Selection;
 use App\Entity\SelectionBlocked;
 use App\Entity\SelectionPassing;
 use App\Entity\SelectionProfile;
+use App\Entity\SelectionQuestion;
 use App\Entity\User;
+use App\Exceptions\SelectionAlreadyFilledProfileException;
+use App\Exceptions\SelectionBlockedException;
 use App\Exceptions\SelectionException;
 
 
@@ -16,28 +19,18 @@ class SelectionRunner
     /**
      * @param User $user
      * @return SelectionPassing|null
-     * @throws SelectionException
+     * @throws SelectionAlreadyFilledProfileException
+     * @throws SelectionBlockedException
      */
     public function getCurrentPassing(User $user): ?SelectionPassing
     {
-        $profile = SelectionProfile::whereUserId($user->getId())->first();
-        if ($profile) {
-            throw new SelectionException(SelectionException::MESSAGE_FILLED_PROFILE);
-        }
-
-        $blocked = SelectionBlocked::whereUserId($user->getId())->first();
-        if ($blocked) {
-            throw new SelectionException(SelectionException::MESSAGE_BLOCKED_24_HOUR);
-        }
+        $this->validateAccess($user);
 
         $passing = SelectionPassing::with('question')
             ->whereUserId($user->getId())
             ->whereAnsweredAt(null)
             ->orderBy('questions_started_at', 'DESC')
             ->first();
-//        if ($passing === null) {
-//            throw new \Exception('TODO not found current question');
-//        }
 
         // TODO проверить оставшееся время тут или в вызывающем?
 
@@ -50,21 +43,23 @@ class SelectionRunner
      * @throws SelectionException
      * @throws \Exception
      */
-    public function getNextQuestion(User $user): SelectionPassing
-    {
-        $profile = SelectionProfile::whereUserId($user->getId())->first();
-        if ($profile) {
-            throw new SelectionException(SelectionException::MESSAGE_FILLED_PROFILE);
-        }
 
-        $blocked = SelectionBlocked::whereUserId($user->getId())->first();
-        if ($blocked) {
-            throw new SelectionException(SelectionException::MESSAGE_BLOCKED_24_HOUR);
-        }
+    public function getNextPassing(User $user): SelectionPassing
+    {
+        $this->validateAccess($user);
 
         // TODO проверить есть ли неотвеченный вопрос?
 
-        $question = null; # TODO next question
+        $previousQuestions = SelectionPassing::whereUserId($user->getId())
+            ->select(['question_id'])
+            ->pluck('question_id');
+        $question = SelectionQuestion::inRandomOrder()
+            ->whereNotIn('id', $previousQuestions)
+            ->limit(1)
+            ->first();
+        if (!$question) {
+            throw new \Exception('TODO not found free question');
+        }
 
         $passing = new SelectionPassing([
             'user_id' => $user->getId(),
@@ -83,5 +78,24 @@ class SelectionRunner
     public function answer(User $user, string $textAnswer) # TODO  question?
     {
         # TODO
+    }
+
+    /**
+     * @param User $user
+     * @throws SelectionAlreadyFilledProfileException
+     * @throws SelectionBlockedException
+     */
+    private function validateAccess(User $user): void
+    {
+        $profile = SelectionProfile::whereUserId($user->getId())->first();
+        if ($profile) {
+            throw new SelectionAlreadyFilledProfileException();
+        }
+
+        $blocked = SelectionBlocked::whereUserId($user->getId())->first();
+        if ($blocked) {
+            throw new SelectionBlockedException();
+        }
+
     }
 }
