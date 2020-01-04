@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home'; # TODO selection.getQuestion?
+    protected $redirectTo = '/selection/get_question';
 
     /**
      * Create a new controller instance.
