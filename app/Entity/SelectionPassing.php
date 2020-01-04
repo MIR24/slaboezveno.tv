@@ -30,8 +30,10 @@ class SelectionPassing extends Model
 {
     public $table = "selection_passing";
 
+    protected $fillable = ['user_id', 'question_id'];
+
     public function question()
     {
-        return $this->hasOne(SelectionQuestion::class);
+        return $this->hasOne(SelectionQuestion::class, 'id', 'question_id');
     }
 }

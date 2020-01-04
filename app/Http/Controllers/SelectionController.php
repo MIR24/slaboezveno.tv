@@ -34,6 +34,6 @@ class SelectionController extends Controller
     public function giveAnswer()
     {
         # TODO
-        # return view('selection.answer_incorrect');
+        return view('selection.answer_incorrect'); # TODO
     }
 }

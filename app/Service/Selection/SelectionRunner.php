@@ -64,8 +64,8 @@ class SelectionRunner
         $passing = new SelectionPassing([
             'user_id' => $user->getId(),
             'question_id' => $question->id,
-            'answered_at' => null,
-            'questions_started_at' => null # TODO find created_at of first question
+//            'answered_at' => null,
+//            'questions_started_at' => null # TODO find created_at of first question
         ]);
 
         if (!$passing->save()) {

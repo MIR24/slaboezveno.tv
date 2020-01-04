@@ -29,14 +29,16 @@
                             </div>
                         </div>
                         <div class="col-12 QuestionNumber">Вопрос 7</div>
-                        <div class="col-12 Question_text">Какой элемент таблицы Менделеева
-                            <br>обозначается латинской буквой N?
+                        <div class="col-12 Question_text">
+                            {{ $question->question }}
                         </div>
                         <div class="col-12">
                             <input type="text" class="form-control inputTextBlock text-center" id="answ1" name="answer1"
                                    enable>
                         </div>
-                        <div class="col-12"><a href="#" class="buttonMainStyle6">Ответить</a></div>
+                        <div class="col-12">
+                            <a href="{{ route('selection.giveAnswer') }}" class="buttonMainStyle6">Ответить</a>
+                        </div>
                     </div>
                 </div>
             </div>
