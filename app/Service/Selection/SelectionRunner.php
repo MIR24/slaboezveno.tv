@@ -75,9 +75,26 @@ class SelectionRunner
         return $passing;
     }
 
-    public function answer(User $user, string $textAnswer) # TODO  question?
+    public function answer(User $user, string $textAnswer)
     {
+        $passing = $this->getCurrentPassing();
+        if (!$passing) {
+            throw new \Exception('TODO no found question');
+        }
+
+        if (0 === $this->mb_strcasecmp($textAnswer, $passing->question->answer)) {
+            # TODO
+        }
+
         # TODO
+    }
+
+    private function mb_strcasecmp($str1, $str2, $encoding = null)
+    {
+        if (null === $encoding) {
+            $encoding = mb_internal_encoding();
+        }
+        return strcmp(mb_strtoupper($str1, $encoding), mb_strtoupper($str2, $encoding));
     }
 
     /**
