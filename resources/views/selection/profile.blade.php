@@ -89,7 +89,7 @@
                         <div class="col-10 col-md-11">
                             <label class="form-check-label text-left " for="exampleCheck1">Отправляя информацию о себе,
                                 я
-                                подтверждая согласие на обработку персональных данных, включая, их сбор, хранение,
+                                подтверждаю согласие на обработку персональных данных, включая их сбор, хранение,
                                 адаптирование, использование и распространение </label>
                         </div>
                         <div class="col-2 col-md-1">
@@ -97,7 +97,7 @@
                         </div>
                     </div>
                     <div class="row text-center">
-                        <div class="col"><a href="#" target="_blank" class="linkRules">Подробные правила участия в
+                        <div class="col"><a href="#TODO" target="_blank" class="linkRules">Подробные правила участия в
                                 кастинге</a></div>
                     </div>
                     <div class="row  text-center">
