@@ -11,9 +11,23 @@
 |
 */
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
+
+Auth::routes();
+
 Route::get('/', function () {
     return view('home');
 });
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/selection/get_question', 'SelectionController@getQuestion')->name("selection.getQuestion");
+    Route::post('/selection/give_answer', 'SelectionController@giveAnswer');
+    Route::get('/selection/get_profile', 'SelectionController@getProfile');
+    Route::post('/selection/fill_profile', 'SelectionController@fillProfile');
+});
+
 
 Route::get('/selection/answer_incorrect', function () {
     return view('selection.answer_incorrect');
@@ -26,7 +40,4 @@ Route::get('/selection/profile', function () {
 });
 Route::get('/selection/profile_success', function () {
     return view('selection.profile_success');
-});
-Route::get('/selection/question', function () {
-    return view('selection.question');
 });

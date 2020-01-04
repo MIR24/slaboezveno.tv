@@ -66,7 +66,7 @@
             </div>
             <div class="row">
                 <div class="iImSpacer100px"></div>
-                <a href="/selection/question" class="buttonMainStyle2">УЧАСТВОВАТЬ</a>
+                <a href="{{ route("selection.getQuestion") }}" class="buttonMainStyle2">УЧАСТВОВАТЬ</a>
                 <div class="iImSpacer100px"></div>
 
             </div>
