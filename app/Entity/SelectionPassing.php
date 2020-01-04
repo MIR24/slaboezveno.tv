@@ -29,4 +29,9 @@ use Illuminate\Database\Eloquent\Model;
 class SelectionPassing extends Model
 {
     public $table = "selection_passing";
+
+    public function question()
+    {
+        return $this->hasOne(SelectionQuestion::class);
+    }
 }
