@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Entity\SelectionProfile;
+use App\Entity\User;
 use App\Exceptions\SelectionAlreadyFilledProfileException;
 use App\Exceptions\SelectionBlockedException;
 use App\Exceptions\SelectionLateAnswerException;
@@ -13,6 +15,7 @@ class SelectionController extends Controller
 {
     public function getQuestion(SelectionRunner $selectionRunner)
     {
+        /** @var User $user */
         $user = Auth::user();
         try {
             $passing = $selectionRunner->getCurrentPassing($user);
@@ -35,6 +38,7 @@ class SelectionController extends Controller
 
     public function giveAnswer(Request $request, SelectionRunner $selectionRunner)
     {
+        /** @var User $user */
         $user = Auth::user();
         try {
             $answer = $request->get("answer1");
@@ -59,6 +63,7 @@ class SelectionController extends Controller
 
     public function getProfile(SelectionRunner $selectionRunner)
     {
+        /** @var User $user */
         $user = Auth::user();
         try {
             if (!$selectionRunner->isAllowedProfile($user)) {
@@ -66,6 +71,37 @@ class SelectionController extends Controller
             }
 
             return view('selection.profile');
+        } catch (SelectionBlockedException $e) {
+            return view('selection.answer_incorrect');
+        } catch (SelectionAlreadyFilledProfileException $e) {
+            return view('selection.profile_success');
+        }
+    }
+
+    public function fillProfile(Request $request, SelectionRunner $selectionRunner)
+    {
+        /** @var User $user */
+        $user = Auth::user();
+        try {
+            if (!$selectionRunner->isAllowedProfile($user)) {
+                return redirect()->route('selection.getQuestion');
+            }
+
+            # TODO сделать валидацию
+            $profile = new SelectionProfile(
+                $request->only((new SelectionProfile())->getFillable())
+            );
+            if ($profile->patronymic === null) {
+                $profile->patronymic = '';
+            }
+            $profile->user_id = $user->getId();
+            $profile->save();
+
+            # TODO менять осторожно или сделать 2 email (User/SelectionProfile)
+            $user->email = $request->get('contact_email');
+            $user->save();
+
+            return view('selection.profile_success');
         } catch (SelectionBlockedException $e) {
             return view('selection.answer_incorrect');
         } catch (SelectionAlreadyFilledProfileException $e) {

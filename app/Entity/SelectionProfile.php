@@ -43,4 +43,23 @@ use Illuminate\Database\Eloquent\Model;
 class SelectionProfile extends Model
 {
     public $table = "selection_profile";
+
+    protected $fillable = [
+        'user_id',
+        'surname',
+        'name',
+        'patronymic',
+        'birthday',
+        'country_of_residence',
+        'city_of_residence',
+        'contact_phone',
+        'link_to_social_network',
+        'link_to_video_card',
+        'agree_to_processing_of_personal_data'
+    ];
+
+    public function getFillable()
+    {
+        return (new \ArrayObject($this->fillable))->getArrayCopy();
+    }
 }

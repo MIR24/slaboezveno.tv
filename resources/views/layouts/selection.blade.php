@@ -13,7 +13,8 @@
 <script src="/js/popper.min.js"></script>
 <script src="/js/bootstrap-4.3.1.js"></script>
 <script src="/js/moment.js"></script>
-{{-- TODO <script src="/js/daterangepicker.js"></script>--}}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+{{--<script src="/js/daterangepicker.js"></script>--}}
 
 @section('javascript')
     <script>

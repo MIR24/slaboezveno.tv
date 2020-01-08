@@ -8,7 +8,10 @@
     <link href="/css/style.css" rel="stylesheet">
     <link href="/css/mediaqueries.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/youtubegallerywall.css"/>
-    <link rel="stylesheet" href="/css/daterangepicker.css"/>
+    {{-- <link rel="stylesheet" href="/css/daterangepicker.css"/>--}}
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+    {{-- TODO color: black for daterangepicker --}}
+
     <!--[if lte IE 8]>
     <style>
         /* IE8 and below specific CSS */

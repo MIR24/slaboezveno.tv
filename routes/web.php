@@ -21,11 +21,11 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth']], function () { # TODO autocreate user in auth
     Route::get('/selection/get_question', 'SelectionController@getQuestion')->name("selection.getQuestion");
     Route::post('/selection/give_answer', 'SelectionController@giveAnswer')->name("selection.giveAnswer");
     Route::get('/selection/get_profile', 'SelectionController@getProfile')->name("selection.getProfile");
-    Route::post('/selection/fill_profile', 'SelectionController@fillProfile');
+    Route::post('/selection/fill_profile', 'SelectionController@fillProfile')->name("selection.fillProfile");
 });
 
 
