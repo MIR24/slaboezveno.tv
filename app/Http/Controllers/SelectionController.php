@@ -25,7 +25,7 @@ class SelectionController extends Controller
 
             return view('selection.question', [
                 'question' => $passing->question,
-                # TODO номер вопроса
+                'currentQuestionNumber' => $selectionRunner->getNumberOfQuestionsInCurrentExamination($user)
             ]);
         } catch (SelectionLateAnswerException $e) {
             return redirect()->route('selection.failedAnswer');

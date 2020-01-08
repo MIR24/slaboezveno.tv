@@ -123,6 +123,21 @@ class SelectionRunner
         return false;
     }
 
+    public function getNumberOfQuestionsInCurrentExamination(User $user): int
+    {
+        $lastGroupOfQuestions = SelectionPassing::whereUserId($user->getId())
+            ->select('questions_started_at', DB::raw('count(*) as total'))
+            ->groupBy('questions_started_at')
+            ->orderBy('questions_started_at', 'DESC')
+            ->limit(1)
+            ->first();
+        if ($lastGroupOfQuestions === null) {
+            return 0;
+        }
+
+        return $lastGroupOfQuestions->total;
+    }
+
     public function isAllowedProfile(User $user): bool
     {
         $lastGroupOfQuestions = SelectionPassing::whereUserId($user->getId())
