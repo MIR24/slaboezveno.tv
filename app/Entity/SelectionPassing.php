@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property string|null $answered_at
  * @property string|null $questions_started_at
+ * @property-read \App\Entity\SelectionQuestion $question
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\SelectionPassing newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\SelectionPassing newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\SelectionPassing query()

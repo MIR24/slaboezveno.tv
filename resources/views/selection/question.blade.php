@@ -21,24 +21,28 @@
                 </div>
                 <div class="col-12 col-md-10 text-center">
                     <div class="row Question  align-items-center">
-                        <div class="col-12 text-center align-items-center">
-                            <div class="timer">
-                                <div class="text-vertical-al">
-                                    <p>20</p>
+                        <form action="{{ route('selection.giveAnswer') }}" method="post">
+                            @csrf
+                            <div class="col-12 text-center align-items-center">
+                                <div class="timer">
+                                    <div class="text-vertical-al">
+                                        <p>20</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-12 QuestionNumber">Вопрос 7</div>
-                        <div class="col-12 Question_text">
-                            {{ $question->question }}
-                        </div>
-                        <div class="col-12">
-                            <input type="text" class="form-control inputTextBlock text-center" id="answ1" name="answer1"
-                                   enable>
-                        </div>
-                        <div class="col-12">
-                            <a href="{{ route('selection.giveAnswer') }}" class="buttonMainStyle6">Ответить</a>
-                        </div>
+                            <div class="col-12 QuestionNumber">Вопрос 7</div>
+                            <div class="col-12 Question_text">
+                                {{ $question->question }}
+                            </div>
+                            <div class="col-12">
+                                <input type="text" class="form-control inputTextBlock text-center" id="answ1"
+                                       name="answer1"
+                                       enable>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="buttonMainStyle6">Ответить</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

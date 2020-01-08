@@ -23,4 +23,6 @@ use Illuminate\Database\Eloquent\Model;
 class SelectionBlocked extends Model
 {
     public $table = "selection_blocked";
+
+    protected $fillable = ['user_id'];
 }

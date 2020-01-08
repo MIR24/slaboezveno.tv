@@ -16,6 +16,8 @@ use App\Exceptions\SelectionException;
 
 class SelectionRunner
 {
+    public const INTERVAL_BETWEEN_EXAMINATION = 24 * 3600; # TODO in view const = 24 hours
+
     /**
      * @param User $user
      * @return SelectionPassing|null
@@ -75,18 +77,20 @@ class SelectionRunner
         return $passing;
     }
 
-    public function answer(User $user, string $textAnswer)
+    public function checkAnswer(User $user, string $textAnswer): bool # TODO next_stage?
     {
-        $passing = $this->getCurrentPassing();
+        $passing = $this->getCurrentPassing($user);
         if (!$passing) {
             throw new \Exception('TODO no found question');
         }
 
         if (0 === $this->mb_strcasecmp($textAnswer, $passing->question->answer)) {
-            # TODO
+            $this->closeAfterSuccessAnswer($passing);
+            return true;
         }
 
-        # TODO
+        $this->closeAfterFailAnswer($passing);
+        return false;
     }
 
     private function mb_strcasecmp($str1, $str2, $encoding = null)
@@ -114,5 +118,20 @@ class SelectionRunner
             throw new SelectionBlockedException();
         }
 
+    }
+
+    private function closeAfterSuccessAnswer(SelectionPassing $passing): void
+    {
+        $passing->answered_at = new \DateTimeImmutable("now");
+        $passing->save();
+    }
+
+    private function closeAfterFailAnswer(SelectionPassing $passing): void
+    {
+        $passing->answered_at = new \DateTimeImmutable("now");
+        $blocked = new SelectionBlocked(['user_id' => $passing->user_id]);
+
+        $blocked->save();
+        $passing->save();
     }
 }

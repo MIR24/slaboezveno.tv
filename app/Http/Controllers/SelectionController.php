@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Exceptions\SelectionAlreadyFilledProfileException;
 use App\Exceptions\SelectionBlockedException;
 use App\Service\Selection\SelectionRunner;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class SelectionController extends Controller
@@ -31,9 +32,19 @@ class SelectionController extends Controller
         }
     }
 
-    public function giveAnswer()
+    public function giveAnswer(Request $request, SelectionRunner $selectionRunner)
     {
-        # TODO
-        return view('selection.answer_incorrect'); # TODO
+        $user = Auth::user();
+        try {
+            $answer = $request->get("answer1");
+            if (!$selectionRunner->checkAnswer($user, $answer)) {
+                return view('selection.answer_incorrect');
+            }
+            # TODO анкета или вопрос
+        } catch (SelectionBlockedException $e) {
+            return view('selection.answer_incorrect');
+        } catch (SelectionAlreadyFilledProfileException $e) {
+            return view('selection.profile_success');
+        }
     }
 }
