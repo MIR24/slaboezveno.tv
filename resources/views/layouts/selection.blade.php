@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 @include('/partials/head')
-<body>
+<body onload="init();">
 <div class="bg_block"></div>
 
 @section('content')
@@ -13,7 +13,7 @@
 <script src="/js/popper.min.js"></script>
 <script src="/js/bootstrap-4.3.1.js"></script>
 <script src="/js/moment.js"></script>
-{{--<script src="/js/daterangepicker.js"></script>--}}
+{{-- TODO <script src="/js/daterangepicker.js"></script>--}}
 
 @section('javascript')
     <script>

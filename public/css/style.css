@@ -891,8 +891,8 @@ padding: 20px 10px 0 7px;
 .timer{
 	width:150px;
 	height:150px;
-	background: url("/images/clock.png") center center no-repeat;
-	background-size: contain;
+	/*background: url("/images/clock.png") center center no-repeat;*/
+	/*background-size: contain;*/
 	display: block;
 	margin:0 auto;
 	text-align: center;

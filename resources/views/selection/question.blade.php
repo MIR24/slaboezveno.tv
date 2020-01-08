@@ -26,7 +26,7 @@
                             <div class="col-12 text-center align-items-center">
                                 <div class="timer">
                                     <div class="text-vertical-al">
-                                        <p>20</p>
+                                        @include('/partials/timer')
                                     </div>
                                 </div>
                             </div>
