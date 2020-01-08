@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $answered_at
  * @property string|null $questions_started_at
  * @property-read \App\Entity\SelectionQuestion $question
+ * @property-read \App\Entity\User $user
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\SelectionPassing newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\SelectionPassing newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\SelectionPassing query()
@@ -36,5 +37,10 @@ class SelectionPassing extends Model
     public function question()
     {
         return $this->hasOne(SelectionQuestion::class, 'id', 'question_id');
+    }
+
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
     }
 }

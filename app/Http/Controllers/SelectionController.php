@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Exceptions\SelectionAlreadyFilledProfileException;
 use App\Exceptions\SelectionBlockedException;
+use App\Exceptions\SelectionLateAnswerException;
 use App\Service\Selection\SelectionRunner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,12 +20,12 @@ class SelectionController extends Controller
                 $passing = $selectionRunner->getNextPassing($user);
             }
 
-            # TODO просроченный вопрос?
-
             return view('selection.question', [
                 'question' => $passing->question,
                 # TODO номер вопроса
             ]);
+        } catch (SelectionLateAnswerException $e) {
+            return view('selection.answer_incorrect');
         } catch (SelectionBlockedException $e) {
             return view('selection.answer_incorrect');
         } catch (SelectionAlreadyFilledProfileException $e) {
@@ -41,6 +42,8 @@ class SelectionController extends Controller
                 return view('selection.answer_incorrect');
             }
             # TODO анкета или вопрос
+        } catch (SelectionLateAnswerException $e) {
+            return view('selection.answer_incorrect');
         } catch (SelectionBlockedException $e) {
             return view('selection.answer_incorrect');
         } catch (SelectionAlreadyFilledProfileException $e) {

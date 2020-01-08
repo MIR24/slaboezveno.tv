@@ -12,17 +12,20 @@ use App\Entity\User;
 use App\Exceptions\SelectionAlreadyFilledProfileException;
 use App\Exceptions\SelectionBlockedException;
 use App\Exceptions\SelectionException;
+use App\Exceptions\SelectionLateAnswerException;
 
 
 class SelectionRunner
 {
     public const INTERVAL_BETWEEN_EXAMINATION = 24 * 3600; # TODO in view const = 24 hours
+    public const INTERVAL_ANSWER_TIME = 20; # TODO in view const = 20 seconds
 
     /**
      * @param User $user
      * @return SelectionPassing|null
      * @throws SelectionAlreadyFilledProfileException
      * @throws SelectionBlockedException
+     * @throws SelectionLateAnswerException
      */
     public function getCurrentPassing(User $user): ?SelectionPassing
     {
@@ -34,7 +37,14 @@ class SelectionRunner
             ->orderBy('questions_started_at', 'DESC')
             ->first();
 
-        // TODO проверить оставшееся время тут или в вызывающем?
+        try {
+            if ($passing) {
+                $this->validatePassing($passing);
+            }
+        } catch (SelectionLateAnswerException $e) {
+            $this->setBlock($passing->user);
+            throw $e;
+        }
 
         return $passing;
     }
@@ -77,6 +87,14 @@ class SelectionRunner
         return $passing;
     }
 
+    /**
+     * @param User $user
+     * @param string $textAnswer
+     * @return bool
+     * @throws SelectionAlreadyFilledProfileException
+     * @throws SelectionBlockedException
+     * @throws SelectionLateAnswerException
+     */
     public function checkAnswer(User $user, string $textAnswer): bool # TODO next_stage?
     {
         $passing = $this->getCurrentPassing($user);
@@ -114,10 +132,21 @@ class SelectionRunner
         }
 
         $blocked = SelectionBlocked::whereUserId($user->getId())->first();
-        if ($blocked) {
+        if ($blocked and $blocked->created_at > new \DateTimeImmutable("now - " . self::INTERVAL_BETWEEN_EXAMINATION . " seconds")) {
             throw new SelectionBlockedException();
         }
 
+    }
+
+    /**
+     * @param SelectionPassing $passing
+     * @throws SelectionLateAnswerException
+     */
+    private function validatePassing(SelectionPassing $passing): void
+    {
+        if ($passing->created_at < new \DateTimeImmutable("now - " . self::INTERVAL_ANSWER_TIME . " seconds")) {
+            throw new SelectionLateAnswerException();
+        }
     }
 
     private function closeAfterSuccessAnswer(SelectionPassing $passing): void
@@ -128,10 +157,15 @@ class SelectionRunner
 
     private function closeAfterFailAnswer(SelectionPassing $passing): void
     {
-        $passing->answered_at = new \DateTimeImmutable("now");
-        $blocked = new SelectionBlocked(['user_id' => $passing->user_id]);
+        $this->setBlock($passing->user);
 
-        $blocked->save();
+        $passing->answered_at = new \DateTimeImmutable("now");
         $passing->save();
+    }
+
+    private function setBlock(User $user): void
+    {
+        $blocked = new SelectionBlocked(['user_id' => $user->getId()]);
+        $blocked->save();
     }
 }
