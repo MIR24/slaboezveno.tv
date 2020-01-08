@@ -89,6 +89,8 @@ class SelectionController extends Controller
                 return redirect()->route('selection.getQuestion');
             }
 
+            # TODO if filled profile: exception or update?
+
             # TODO сделать валидацию
             $profile = new SelectionProfile(
                 $request->only((new SelectionProfile())->getFillable())
