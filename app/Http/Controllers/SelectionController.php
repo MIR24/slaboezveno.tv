@@ -19,6 +19,11 @@ class SelectionController extends Controller
         $user = Auth::user();
         try {
             $passing = $selectionRunner->getCurrentPassing($user);
+
+            if ($selectionRunner->isAllowedProfile()) {
+                return redirect()->route('selection.getProfile');
+            }
+
             if (!$passing) {
                 $passing = $selectionRunner->getNextPassing($user);
             }

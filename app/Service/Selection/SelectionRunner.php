@@ -62,9 +62,6 @@ class SelectionRunner
     {
         $this->validateAccess($user);
 
-        // TODO проверить есть ли неотвеченный вопрос?
-        // TODO проверить лимит количества вопросов
-
         /** @var Collection $previousQuestions */
         $previousQuestions = SelectionPassing::whereUserId($user->getId())
             ->select(['question_id'])
