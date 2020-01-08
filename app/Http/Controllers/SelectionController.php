@@ -56,4 +56,20 @@ class SelectionController extends Controller
             return view('selection.profile_success');
         }
     }
+
+    public function getProfile(SelectionRunner $selectionRunner)
+    {
+        $user = Auth::user();
+        try {
+            if (!$selectionRunner->isAllowedProfile($user)) {
+                return redirect()->route('selection.getQuestion');
+            }
+
+            return view('selection.profile');
+        } catch (SelectionBlockedException $e) {
+            return view('selection.answer_incorrect');
+        } catch (SelectionAlreadyFilledProfileException $e) {
+            return view('selection.profile_success');
+        }
+    }
 }
