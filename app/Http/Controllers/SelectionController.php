@@ -41,7 +41,13 @@ class SelectionController extends Controller
             if (!$selectionRunner->checkAnswer($user, $answer)) {
                 return view('selection.answer_incorrect');
             }
-            # TODO анкета или вопрос
+
+            if ($selectionRunner->isAllowedProfile($user)) {
+                # TODO а если профиль заполнен?
+                return redirect()->route('selection.getProfile');
+            }
+
+            return redirect()->route('selection.getQuestion');
         } catch (SelectionLateAnswerException $e) {
             return view('selection.answer_incorrect');
         } catch (SelectionBlockedException $e) {

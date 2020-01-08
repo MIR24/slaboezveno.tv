@@ -22,7 +22,7 @@
                 <div class="col-12 col-md-10 text-center">
                     <div class="row Question  align-items-center">
                         <div class="col-12  Question_text">
-                            <p>Это не правильный ответ
+                            <p>Это неправильный ответ
                                 <br>Вы самое слабое звено!!!<br><br>
                                 ПОПРОБОВАТЬ СНОВА МОЖНО ЧЕРЕЗ 24 ЧАСА,
                                 <br> А СЕЙЧАС – ПРОЩАЙТЕ!</p>

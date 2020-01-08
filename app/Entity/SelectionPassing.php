@@ -32,7 +32,7 @@ class SelectionPassing extends Model
 {
     public $table = "selection_passing";
 
-    protected $fillable = ['user_id', 'question_id'];
+    protected $fillable = ['user_id', 'question_id', 'questions_started_at'];
 
     public function question()
     {

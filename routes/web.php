@@ -24,7 +24,7 @@ Route::get('/', function () {
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/selection/get_question', 'SelectionController@getQuestion')->name("selection.getQuestion");
     Route::post('/selection/give_answer', 'SelectionController@giveAnswer')->name("selection.giveAnswer");
-    Route::get('/selection/get_profile', 'SelectionController@getProfile');
+    Route::get('/selection/get_profile', 'SelectionController@getProfile')->name("selection.getProfile");
     Route::post('/selection/fill_profile', 'SelectionController@fillProfile');
 });
 

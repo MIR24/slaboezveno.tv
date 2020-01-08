@@ -13,12 +13,15 @@ use App\Exceptions\SelectionAlreadyFilledProfileException;
 use App\Exceptions\SelectionBlockedException;
 use App\Exceptions\SelectionException;
 use App\Exceptions\SelectionLateAnswerException;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\DB;
 
 
 class SelectionRunner
 {
     public const INTERVAL_BETWEEN_EXAMINATION = 24 * 3600; # TODO in view const = 24 hours
     public const INTERVAL_ANSWER_TIME = 20; # TODO in view const = 20 seconds
+    public const NUMBER_OF_ANSWERS_REQUIRED = 10; # TODO in view const = 10
 
     /**
      * @param User $user
@@ -55,13 +58,14 @@ class SelectionRunner
      * @throws SelectionException
      * @throws \Exception
      */
-
     public function getNextPassing(User $user): SelectionPassing
     {
         $this->validateAccess($user);
 
         // TODO проверить есть ли неотвеченный вопрос?
+        // TODO проверить лимит количества вопросов
 
+        /** @var Collection $previousQuestions */
         $previousQuestions = SelectionPassing::whereUserId($user->getId())
             ->select(['question_id'])
             ->pluck('question_id');
@@ -73,11 +77,19 @@ class SelectionRunner
             throw new \Exception('TODO not found free question');
         }
 
+        $examinationStartedAt = new \DateTimeImmutable("now");
+        $lastPassing = SelectionPassing::whereUserId($user->getId())
+            ->orderBy('created_at', 'DESC')
+            ->limit(1)
+            ->first();
+        if ($lastPassing and $lastPassing->created_at > new \DateTimeImmutable("now - " . self::INTERVAL_ANSWER_TIME . " seconds")) {
+            $examinationStartedAt = $lastPassing->questions_started_at;
+        }
+
         $passing = new SelectionPassing([
             'user_id' => $user->getId(),
             'question_id' => $question->id,
-//            'answered_at' => null,
-//            'questions_started_at' => null # TODO find created_at of first question
+            'questions_started_at' => $examinationStartedAt,
         ]);
 
         if (!$passing->save()) {
@@ -95,7 +107,7 @@ class SelectionRunner
      * @throws SelectionBlockedException
      * @throws SelectionLateAnswerException
      */
-    public function checkAnswer(User $user, string $textAnswer): bool # TODO next_stage?
+    public function checkAnswer(User $user, string $textAnswer): bool
     {
         $passing = $this->getCurrentPassing($user);
         if (!$passing) {
@@ -110,6 +122,24 @@ class SelectionRunner
         $this->closeAfterFailAnswer($passing);
         return false;
     }
+
+    public function isAllowedProfile(User $user): bool
+    {
+        $lastGroupOfQuestions = SelectionPassing::whereUserId($user->getId())
+            ->select('questions_started_at', DB::raw('count(*) as total'))
+            ->groupBy('questions_started_at')
+            ->orderBy('questions_started_at', 'DESC')
+            ->limit(1)
+            ->first();
+        if ($lastGroupOfQuestions === null) {
+            return false;
+        }
+
+        return ($lastGroupOfQuestions->total >= self::NUMBER_OF_ANSWERS_REQUIRED);
+    }
+
+    // TODO? public function isFilledProfile(User $user): bool
+
 
     private function mb_strcasecmp($str1, $str2, $encoding = null)
     {
@@ -135,7 +165,6 @@ class SelectionRunner
         if ($blocked and $blocked->created_at > new \DateTimeImmutable("now - " . self::INTERVAL_BETWEEN_EXAMINATION . " seconds")) {
             throw new SelectionBlockedException();
         }
-
     }
 
     /**
@@ -144,7 +173,9 @@ class SelectionRunner
      */
     private function validatePassing(SelectionPassing $passing): void
     {
-        if ($passing->created_at < new \DateTimeImmutable("now - " . self::INTERVAL_ANSWER_TIME . " seconds")) {
+        $isLateAnswer = $passing->created_at < new \DateTimeImmutable("now - " . self::INTERVAL_ANSWER_TIME . " seconds");
+        $isPreviousExaminationEnded = $passing->questions_started_at < new \DateTimeImmutable("now - " . self::INTERVAL_BETWEEN_EXAMINATION . " seconds");
+        if ($isLateAnswer and !$isPreviousExaminationEnded) {
             throw new SelectionLateAnswerException();
         }
     }
