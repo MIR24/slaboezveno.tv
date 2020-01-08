@@ -26,18 +26,17 @@ Route::group(['middleware' => ['auth']], function () { # TODO autocreate user in
     Route::post('/selection/give_answer', 'SelectionController@giveAnswer')->name("selection.giveAnswer");
     Route::get('/selection/get_profile', 'SelectionController@getProfile')->name("selection.getProfile");
     Route::post('/selection/fill_profile', 'SelectionController@fillProfile')->name("selection.fillProfile");
-});
 
 
-Route::get('/selection/answer_incorrect', function () {
-    return view('selection.answer_incorrect');
-});
-Route::get('/selection/answers_correct', function () {
-    return view('selection.answers_correct');
-});
-Route::get('/selection/profile', function () {
-    return view('selection.profile');
-});
-Route::get('/selection/profile_success', function () {
-    return view('selection.profile_success');
+    Route::get('/selection/failed_answer', function () {
+        return view('selection.answer_incorrect');
+    })->name("selection.failedAnswer");
+
+    Route::get('/selection/answers_correct', function () {
+        return view('selection.answers_correct');
+    })->name("selection.successAnswers");
+
+    Route::get('/selection/filled_profile', function () {
+        return view('selection.profile_success');
+    })->name("selection.filledProfile");
 });

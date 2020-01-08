@@ -28,11 +28,11 @@ class SelectionController extends Controller
                 # TODO номер вопроса
             ]);
         } catch (SelectionLateAnswerException $e) {
-            return view('selection.answer_incorrect');
+            return redirect()->route('selection.failedAnswer');
         } catch (SelectionBlockedException $e) {
-            return view('selection.answer_incorrect');
+            return redirect()->route('selection.failedAnswer');
         } catch (SelectionAlreadyFilledProfileException $e) {
-            return view('selection.profile_success');
+            return redirect()->route('selection.filledProfile');
         }
     }
 
@@ -43,21 +43,21 @@ class SelectionController extends Controller
         try {
             $answer = $request->get("answer1");
             if (!$selectionRunner->checkAnswer($user, $answer)) {
-                return view('selection.answer_incorrect');
+                return redirect()->route('selection.failedAnswer');
             }
 
             if ($selectionRunner->isAllowedProfile($user)) {
                 # TODO а если профиль заполнен?
-                return redirect()->route('selection.getProfile');
+                return redirect()->route('selection.successAnswers');
             }
 
             return redirect()->route('selection.getQuestion');
         } catch (SelectionLateAnswerException $e) {
-            return view('selection.answer_incorrect');
+            return redirect()->route('selection.failedAnswer');
         } catch (SelectionBlockedException $e) {
-            return view('selection.answer_incorrect');
+            return redirect()->route('selection.failedAnswer');
         } catch (SelectionAlreadyFilledProfileException $e) {
-            return view('selection.profile_success');
+            return redirect()->route('selection.filledProfile');
         }
     }
 
@@ -70,11 +70,13 @@ class SelectionController extends Controller
                 return redirect()->route('selection.getQuestion');
             }
 
+            # TODO if filled profile
+
             return view('selection.profile');
         } catch (SelectionBlockedException $e) {
-            return view('selection.answer_incorrect');
+            return redirect()->route('selection.failedAnswer');
         } catch (SelectionAlreadyFilledProfileException $e) {
-            return view('selection.profile_success');
+            return redirect()->route('selection.filledProfile');
         }
     }
 
@@ -101,11 +103,11 @@ class SelectionController extends Controller
             $user->email = $request->get('contact_email');
             $user->save();
 
-            return view('selection.profile_success');
+            return redirect()->route('selection.filledProfile');
         } catch (SelectionBlockedException $e) {
-            return view('selection.answer_incorrect');
+            return redirect()->route('selection.failedAnswer');
         } catch (SelectionAlreadyFilledProfileException $e) {
-            return view('selection.profile_success');
+            return redirect()->route('selection.filledProfile');
         }
     }
 }

@@ -28,7 +28,11 @@
                             <p class="sucsess">Для подачи заявки на участие во втором туре кастинга необходимо заполнить
                                 анкету о себе и прислать нам короткую видеовизитку с небольшим рассказом о себе</p>
                         </div>
-                        <div class="col-12"><a href="#" class="buttonMainStyle7">Заполнить анкету</a></div>
+                        <div class="col-12">
+                            <a href="{{route("selection.getProfile")}}" class="buttonMainStyle7">
+                                Заполнить анкету
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
