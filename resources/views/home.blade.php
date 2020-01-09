@@ -137,43 +137,60 @@
             </div>
         </div>
 
-        <div class="container container1680">
-            <div class="iImSpacer60px"></div>
+        <div class="container-fluid">
             <div class="row">
-                <ul id="youtubelist">
-                    <li><a href="https://www.youtube.com/watch?v=iC_v67yeNXQ"
-                           data-url="http://dynamicdrive.com/dynamicindex17/youtube-video-gallery.htm">Responsive
-                            Youtube Video Gallery</a></li>
-                    <li><a href="https://www.youtube.com/watch?v=gBJl1ODksNU">Best of Trance 2012</a></li>
-                    <li><a href="https://youtu.be/oIlIVFBBbNw">Pigeons Animation</a></li>
-                    <li><a href="https://youtu.be/Eoq5VKfCOLU"
-                           data-url="http://dynamicdrive.com/dynamicindex16/featurebox/index.html">Blossom Opt-In
-                            Box</a></li>
-                    <li><a href="https://youtu.be/KWFfDyupGpQ">Who's Your Favorite</a></li>
-                    <li><a href="https://youtu.be/GHWsBnQ178w"
-                           data-url="http://dynamicdrive.com/dynamicindex1/sticky-horizontal-menu.htm">Sticky Horizontal
-                            Menu</a></li>
-                    <li><a href="https://youtu.be/ROipDjNYK4k">Alarm- Short Animation</a></li>
-                    <li><a href="https://youtu.be/fzrfrXhE-w4">Sam- Short Animation</a></li>
-                    <li><a href="https://youtu.be/8ZRLlyxvr6E">Paste Of Love</a></li>
-                    <li><a href="https://youtu.be/O_yVo3YOfqQ">Changing Batteries</a></li>
-                    <li><a href="https://youtu.be/gMRScklkpa4">Panda Bear</a></li>
-                    <li><a href="https://youtu.be/OXVcMogNVRE">Wild Animals</a></li>
-                </ul>
+                <div class="col text-center">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/XsjUBfn7J84" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
             </div>
-
-
-            <div class="row" style="display: none;">
-                <div class="col-4 promo"><img src="images/promo/preview.jpg"></div>
-                <div class="col-4 promo"><img src="images/promo/preview.jpg"></div>
-                <div class="col-4 promo"><img src="images/promo/preview.jpg"></div>
-
-                <div class="col-4 promo"><img src="images/promo/preview.jpg"></div>
-                <div class="col-4 promo"><img src="images/promo/preview.jpg"></div>
-                <div class="col-4 promo"><img src="images/promo/preview.jpg"></div>
-
-
+            <div class="row">
+                <div class="col text-center">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/7y790_Kmvz8" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </div>
             </div>
+        </div>
+
+{{--        <div class="container container1680">--}}
+{{--            <div class="iImSpacer60px"></div>--}}
+{{--            <div class="row">--}}
+{{--                <ul id="youtubelist">--}}
+{{--                    <li><a href="https://www.youtube.com/watch?v=iC_v67yeNXQ"--}}
+{{--                           data-url="http://dynamicdrive.com/dynamicindex17/youtube-video-gallery.htm">Responsive--}}
+{{--                            Youtube Video Gallery</a></li>--}}
+{{--                    <li><a href="https://www.youtube.com/watch?v=gBJl1ODksNU">Best of Trance 2012</a></li>--}}
+{{--                    <li><a href="https://youtu.be/oIlIVFBBbNw">Pigeons Animation</a></li>--}}
+{{--                    <li><a href="https://youtu.be/Eoq5VKfCOLU"--}}
+{{--                           data-url="http://dynamicdrive.com/dynamicindex16/featurebox/index.html">Blossom Opt-In--}}
+{{--                            Box</a></li>--}}
+{{--                    <li><a href="https://youtu.be/KWFfDyupGpQ">Who's Your Favorite</a></li>--}}
+{{--                    <li><a href="https://youtu.be/GHWsBnQ178w"--}}
+{{--                           data-url="http://dynamicdrive.com/dynamicindex1/sticky-horizontal-menu.htm">Sticky Horizontal--}}
+{{--                            Menu</a></li>--}}
+{{--                    <li><a href="https://youtu.be/ROipDjNYK4k">Alarm- Short Animation</a></li>--}}
+{{--                    <li><a href="https://youtu.be/fzrfrXhE-w4">Sam- Short Animation</a></li>--}}
+{{--                    <li><a href="https://youtu.be/8ZRLlyxvr6E">Paste Of Love</a></li>--}}
+{{--                    <li><a href="https://youtu.be/O_yVo3YOfqQ">Changing Batteries</a></li>--}}
+{{--                    <li><a href="https://youtu.be/gMRScklkpa4">Panda Bear</a></li>--}}
+{{--                    <li><a href="https://youtu.be/OXVcMogNVRE">Wild Animals</a></li>--}}
+{{--                </ul>--}}
+{{--            </div>--}}
+
+
+{{--            <div class="row" style="display: none;">--}}
+{{--                <div class="col-4 promo"><img src="images/promo/preview.jpg"></div>--}}
+{{--                <div class="col-4 promo"><img src="images/promo/preview.jpg"></div>--}}
+{{--                <div class="col-4 promo"><img src="images/promo/preview.jpg"></div>--}}
+
+{{--                <div class="col-4 promo"><img src="images/promo/preview.jpg"></div>--}}
+{{--                <div class="col-4 promo"><img src="images/promo/preview.jpg"></div>--}}
+{{--                <div class="col-4 promo"><img src="images/promo/preview.jpg"></div>--}}
+
+
+{{--            </div>--}}
 {{--            <div class="row">--}}
 
 {{--                <nav aria-label="Page navigation" class="pagBlock">--}}
@@ -194,6 +211,6 @@
 {{--            </div>--}}
 
 
-        </div>
+{{--        </div>--}}
     </section>
 @endsection
