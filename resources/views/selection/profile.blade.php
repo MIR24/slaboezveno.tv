@@ -109,9 +109,9 @@
                         </div>
                         <div class="row text-center">
                             <div class="col">
-                                <a href="#TODO" target="_blank" class="linkRules">
-                                    Подробные правила участия в кастинге
-                                </a>
+{{--                                <a href="#TODO" target="_blank" class="linkRules">--}}
+{{--                                    Подробные правила участия в кастинге--}}
+{{--                                </a>--}}
                             </div>
                         </div>
                         <div class="row  text-center">
