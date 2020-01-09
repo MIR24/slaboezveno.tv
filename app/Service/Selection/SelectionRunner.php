@@ -147,7 +147,13 @@ class SelectionRunner
             return false;
         }
 
-        return ($lastGroupOfQuestions->total >= self::NUMBER_OF_ANSWERS_REQUIRED);
+        $allowed = ($lastGroupOfQuestions->total >= self::NUMBER_OF_ANSWERS_REQUIRED);
+
+        if ($allowed) {
+            $this->clearQuestionsForUser($user);
+        }
+
+        return $allowed;
     }
 
     // TODO? public function isFilledProfile(User $user): bool
@@ -188,6 +194,7 @@ class SelectionRunner
         $isLateAnswer = $passing->created_at < new \DateTimeImmutable("now - " . self::INTERVAL_ANSWER_TIME . " seconds");
         $isPreviousExaminationEnded = $passing->questions_started_at < new \DateTimeImmutable("now - " . self::INTERVAL_BETWEEN_EXAMINATION . " seconds");
         if ($isLateAnswer and !$isPreviousExaminationEnded) {
+            $this->clearQuestionsForUser($passing->user);
             throw new SelectionLateAnswerException();
         }
     }
@@ -210,5 +217,12 @@ class SelectionRunner
     {
         $blocked = new SelectionBlocked(['user_id' => $user->getId()]);
         $blocked->save();
+
+        $this->clearQuestionsForUser($user);
+    }
+
+    private function clearQuestionsForUser(User $user): void
+    {
+        SelectionPassing::whereUserId($user->getId())->delete();
     }
 }
