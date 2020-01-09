@@ -8,7 +8,7 @@
                 <div class="col-12 col-md-10 text-center">
                     <div class="row Question  align-items-center">
                         <div class="col-12  Question_text">
-                            <p>ВАША ЗАЯВКА ПРИНЯТА!</p>
+                            <p>ВАША ЗАЯВКА <a href="/">ПРИНЯТА</a>!</p>
                         </div>
                     </div>
                 </div>

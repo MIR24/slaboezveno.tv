@@ -47,6 +47,10 @@ background: url(/images/bg_fade.jpg) center center no-repeat;
     font-family: heliosextc, 'Comic Sans MS', cursive;
 	     color: white;
    }
+.Question_text a {
+    color: white;
+    text-decoration: underline;
+}
 .HeliosC {
     font-family:  HeliosC, 'Comic Sans MS', cursive;
    }
