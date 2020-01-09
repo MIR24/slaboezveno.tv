@@ -2,7 +2,19 @@
     <div class="container container1680 HeliosC footerHere">
         <div class="row">
             <div class="col-xl-5 col-md-12">
-                <div class="row"> <div class="col"><img src="images/footer-logo.png"></div></div>
+                <div class="row"> <div class="col"><a href="https://mir24.tv"><img src="images/footer-logo.png"></a></div></div>
+                {{--                        <a href="http://www.mirtv.ru">--}}
+                {{--                            <img src="/images/footer/mir-logo.png" alt="">--}}
+                {{--                        </a>--}}
+                {{--                        <a href="https://mir24.tv">--}}
+                {{--                            <img src="/images/footer/mir24-logo.png" alt="">--}}
+                {{--                        </a>--}}
+                {{--                        <a href="http://mirpremium.tv">--}}
+                {{--                            <img src="/images/footer/mir-premium-logo.png" alt="">--}}
+                {{--                        </a>--}}
+                {{--                        <a href="http://radiomir.fm">--}}
+                {{--                            <img src="/images/footer/mir-logo-radio.svg" alt="">--}}
+                {{--                        </a>--}}
                 <div class="row"> <div class="col"><div class="footerTag1">Закрытое акционерное общество «Межгосударственная телерадиокомпания «Мир». Главный редактор: Батыршин Р.И. Свидетельство о регистрации СМИ ЭЛ № ФС77-50091 от 06 июня 2012 года. Свидетельство выдано Федеральной службой по надзору в сфере связи, информационных технологий и массовых коммуникаций.</div></div></div>
                 <div class="row"> <div class="col"><div class="footerTag1"> Для корреспонденции: 107076, Москва, улица Краснобогатырская, д. 44, стр.1<br> Юридический адрес: 115184, Москва, улица Пятницкая, д. 25</div></div></div>
             </div>
