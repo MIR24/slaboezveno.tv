@@ -47,7 +47,7 @@ class SelectionController extends Controller
         $user = Auth::user();
         try {
             $answer = $request->get("answer1");
-            if (!$selectionRunner->checkAnswer($user, $answer??'')) {
+            if (!$selectionRunner->checkAnswer($user, $answer ?? '')) {
                 return redirect()->route('selection.failedAnswer');
             }
 

@@ -164,7 +164,9 @@ class SelectionRunner
         if (null === $encoding) {
             $encoding = mb_internal_encoding();
         }
-        return strcmp(mb_strtoupper($str1, $encoding), mb_strtoupper($str2, $encoding));
+        $filteredStr1 = preg_replace('/[^a-zа-яё\d]/ui', '', $str1);
+        $filteredStr2 = preg_replace('/[^a-zа-яё\d]/ui', '', $str2);
+        return strcmp(mb_strtoupper($filteredStr1, $encoding), mb_strtoupper($filteredStr2, $encoding));
     }
 
     /**
