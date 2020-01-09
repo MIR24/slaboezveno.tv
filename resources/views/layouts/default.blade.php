@@ -3,7 +3,7 @@
 @include('/partials/head')
 <body>
 <div class="bg_block"></div>
-@include('/partials/navbar')
+{{--@include('/partials/navbar')--}}
 
 @section('content')
 @show
