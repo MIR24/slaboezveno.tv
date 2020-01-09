@@ -174,24 +174,24 @@
 
 
             </div>
-            <div class="row">
+{{--            <div class="row">--}}
 
-                <nav aria-label="Page navigation" class="pagBlock">
-                    <ul class="pagination justify-content-center">
-                        <!--<li class="page-item disabled">   <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a></li>-->
-                        <li class="page-item-circle PageActive"><a class="page-link-circle" href="#">1</a></li>
-                        <li class="page-item-circle"><a class="page-link-circle" href="#">2</a></li>
-                        <li class="page-item-circle"><a class="page-link-circle" href="#">3</a></li>
-                        <li class="page-item-circle"><a class="page-link-circle" href="#">4</a></li>
+{{--                <nav aria-label="Page navigation" class="pagBlock">--}}
+{{--                    <ul class="pagination justify-content-center">--}}
+{{--                        <!--<li class="page-item disabled">   <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a></li>-->--}}
+{{--                        <li class="page-item-circle PageActive"><a class="page-link-circle" href="#">1</a></li>--}}
+{{--                        <li class="page-item-circle"><a class="page-link-circle" href="#">2</a></li>--}}
+{{--                        <li class="page-item-circle"><a class="page-link-circle" href="#">3</a></li>--}}
+{{--                        <li class="page-item-circle"><a class="page-link-circle" href="#">4</a></li>--}}
 
-                        <li class="page-item-circle"><a class="page-link-circle" href="#">99</a></li>
-                        <!--<li class="page-item">
-                          <a class="page-link" href="#">Next</a>
-                        </li>-->
-                    </ul>
-                </nav>
+{{--                        <li class="page-item-circle"><a class="page-link-circle" href="#">99</a></li>--}}
+{{--                        <!--<li class="page-item">--}}
+{{--                          <a class="page-link" href="#">Next</a>--}}
+{{--                        </li>-->--}}
+{{--                    </ul>--}}
+{{--                </nav>--}}
 
-            </div>
+{{--            </div>--}}
 
 
         </div>
