@@ -147,13 +147,7 @@ class SelectionRunner
             return false;
         }
 
-        $allowed = ($lastGroupOfQuestions->total >= self::NUMBER_OF_ANSWERS_REQUIRED);
-
-        if ($allowed) {
-            $this->clearQuestionsForUser($user);
-        }
-
-        return $allowed;
+        return ($lastGroupOfQuestions->total >= self::NUMBER_OF_ANSWERS_REQUIRED);
     }
 
     // TODO? public function isFilledProfile(User $user): bool
