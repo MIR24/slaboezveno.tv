@@ -32,6 +32,10 @@ Route::group(['middleware' => ['auth']], function () { # TODO autocreate user in
         return view('selection.answer_incorrect');
     })->name("selection.failedAnswer");
 
+    Route::get('/selection/blocked', function () {
+        return view('selection.blocked');
+    })->name("selection.blocked");
+
     Route::get('/selection/answers_correct', function () {
         return view('selection.answers_correct');
     })->name("selection.successAnswers");

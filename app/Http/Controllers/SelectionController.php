@@ -35,7 +35,7 @@ class SelectionController extends Controller
         } catch (SelectionLateAnswerException $e) {
             return redirect()->route('selection.failedAnswer');
         } catch (SelectionBlockedException $e) {
-            return redirect()->route('selection.failedAnswer');
+            return redirect()->route('selection.blocked');
         } catch (SelectionAlreadyFilledProfileException $e) {
             return redirect()->route('selection.filledProfile');
         }
@@ -60,7 +60,7 @@ class SelectionController extends Controller
         } catch (SelectionLateAnswerException $e) {
             return redirect()->route('selection.failedAnswer');
         } catch (SelectionBlockedException $e) {
-            return redirect()->route('selection.failedAnswer');
+            return redirect()->route('selection.blocked');
         } catch (SelectionAlreadyFilledProfileException $e) {
             return redirect()->route('selection.filledProfile');
         }
@@ -79,7 +79,7 @@ class SelectionController extends Controller
 
             return view('selection.profile');
         } catch (SelectionBlockedException $e) {
-            return redirect()->route('selection.failedAnswer');
+            return redirect()->route('selection.blocked');
         } catch (SelectionAlreadyFilledProfileException $e) {
             return redirect()->route('selection.filledProfile');
         }
@@ -112,7 +112,7 @@ class SelectionController extends Controller
 
             return redirect()->route('selection.filledProfile');
         } catch (SelectionBlockedException $e) {
-            return redirect()->route('selection.failedAnswer');
+            return redirect()->route('selection.blocked');
         } catch (SelectionAlreadyFilledProfileException $e) {
             return redirect()->route('selection.filledProfile');
         }
