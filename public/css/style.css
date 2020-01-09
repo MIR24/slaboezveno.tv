@@ -928,8 +928,6 @@ vertical-align:middle;
 }
 /*-------- Блок Вопросы  -------*/
 
-
-
-
-
-
+.daterangepicker {
+    color: black !important;
+}
