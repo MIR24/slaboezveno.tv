@@ -194,8 +194,10 @@ class SelectionRunner
     private function validatePassing(SelectionPassing $passing): void
     {
         $isLateAnswer = $passing->created_at < new \DateTimeImmutable("now - " . self::INTERVAL_ANSWER_TIME . " seconds");
-        $isPreviousExaminationEnded = $passing->questions_started_at < new \DateTimeImmutable("now - " . self::INTERVAL_BETWEEN_EXAMINATION . " seconds");
-        if ($isLateAnswer and !$isPreviousExaminationEnded) {
+        # TODO $isPreviousExaminationEnded ломается, если нет предыдущего отбора ( первый или очищен через clearQuestionsForUser)
+//        $isPreviousExaminationEnded = $passing->questions_started_at < new \DateTimeImmutable("now - " . self::INTERVAL_BETWEEN_EXAMINATION . " seconds");
+//        if ($isLateAnswer and !$isPreviousExaminationEnded) {
+        if ($isLateAnswer) {
             $this->clearQuestionsForUser($passing->user);
             throw new SelectionLateAnswerException();
         }
