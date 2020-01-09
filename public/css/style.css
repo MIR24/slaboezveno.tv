@@ -91,6 +91,11 @@ background: url(/images/bg_fade.jpg) center center no-repeat;
 
 }
 
+a.close-btn {
+    color: white;
+    text-decoration: none;
+}
+
 .close-btn-container{
 
     position: fixed;

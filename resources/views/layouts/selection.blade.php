@@ -3,7 +3,9 @@
 @include('/partials/head')
 <body onload="init();">
 <div class="bg_block"></div>
-@include('/partials/navbar_in_selection')
+<div class="close-btn-container">
+    <a href="/" class="close-btn">&times;</a>
+</div>
 
 
 @section('content')
