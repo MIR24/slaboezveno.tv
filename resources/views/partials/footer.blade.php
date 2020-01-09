@@ -44,9 +44,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <a href="#" class="rulers_link">*Официальные правила</a>
-                </div>
             </div>
         </div>
     </div>
