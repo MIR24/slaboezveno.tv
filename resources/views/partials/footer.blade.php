@@ -50,8 +50,8 @@
 
                     <div class="col-xl-6  col-md-12">
                         <div class="row align-items-center app_buttons">
-                            <div class="col-xl-6  col-6"><a href="#"><img src="images/footer/google_play.png"></a></div>
-                            <div class="col-xl-6  col-6"><a href="#"><img src="images/footer/apple_store.png"></a></div>
+                            <div class="col-xl-6  col-6"><a href="https://play.google.com/store/apps/details?id=tv.mir24.app"><img src="images/footer/google_play.png"></a></div>
+                            <div class="col-xl-6  col-6"><a href="https://itunes.apple.com/us/app/mir-24/id942931004?l=ru&amp;ls=1&amp;mt=8"><img src="images/footer/apple_store.png"></a></div>
                         </div>
                     </div>
                 </div>
