@@ -31,7 +31,7 @@
                             </div>
                             <div class="col-12">
                                 <input type="text" class="form-control inputTextBlock text-center" id="answ1"
-                                       name="answer1" autocomplete="off">
+                                       name="answer1" autocomplete="off" autofocus>
                             </div>
                             <div class="col-12">
                                 <button type="submit" class="buttonMainStyle6">Ответить</button>
