@@ -19,7 +19,7 @@
 
                             <div class="col sm_buttons_item "> <a href="https://t.me/mir24tv"><img src="images/footer/sm_07.jpg"></a></div>
                             <div class="col sm_buttons_item "> <a href="http://twitter.com/mir24tv"><img src="images/footer/sm_06.jpg"></a></div>
-                            <div class="col sm_buttons_item "> <a href="http://www.odnoklassniki.ru/GROUP/52226357788884"><img src="images/footer/sm_05.jpg"></a></div>
+                            <div class="col sm_buttons_item "> <a href="https://ok.ru/mir24tv"><img src="images/footer/sm_05.jpg"></a></div>
                             <div class="col sm_buttons_item "> <a href="http://www.youtube.com/USER/Mir24tv"><img src="images/footer/sm_04.jpg"></a></div>
                             <div class="col sm_buttons_item "> <a href="http://vk.com/mir24tv"><img src="images/footer/sm_03.jpg"></a></div>
                             <div class="col sm_buttons_item "> <a href="http://instagram.com/mir24tv/"><img src="images/footer/sm_02.jpg"></a></div>
