@@ -20,7 +20,7 @@ class SelectionController extends Controller
         try {
             $passing = $selectionRunner->getCurrentPassing($user);
 
-            if ($selectionRunner->isAllowedProfile()) {
+            if ($selectionRunner->isAllowedProfile($user)) {
                 return redirect()->route('selection.getProfile');
             }
 
