@@ -75,16 +75,17 @@ class SelectionProfileExport extends Command
         /** @var Collection $profiles */
         $profiles = SelectionProfile::select($columns)
             ->leftJoin('users', 'selection_profile.user_id', '=', 'users.id')
-            ->where('selection_profile.created_at', '>', $dateBegin)
+//            ->where('selection_profile.created_at', '>', $dateBegin)
             ->orderBy('selection_profile.created_at', 'asc')
             ->get();
 
         $list = $profiles->toArray();
         array_unshift($list, $labels);
 
-        $dateFrom = $dateBegin->format("YmdHis");
-        $dateTo = (new \DateTimeImmutable('now'))->format("YmdHis");
-        $fp = fopen("public/csv/slaboe_zveno_profiles_from_${dateFrom}_to_${dateTo}.csv", 'w');
+//        $dateFrom = $dateBegin->format("YmdHis");
+//        $dateTo = (new \DateTimeImmutable('now'))->format("YmdHis");
+//        $fp = fopen("public/csv/slaboe_zveno_profiles_from_${dateFrom}_to_${dateTo}.csv", 'w');
+        $fp = fopen("public/csv/slaboe_zveno_profiles.csv", 'w');
         foreach ($list as $fields) {
             fputcsv($fp, $fields, ';', '"');
         }
