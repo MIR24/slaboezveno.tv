@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="/css/youtubegallerywall.css"/>
     {{-- <link rel="stylesheet" href="/css/daterangepicker.css"/>--}}
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
-    {{-- TODO color: black for daterangepicker --}}
 
     <!--[if lte IE 8]>
     <style>

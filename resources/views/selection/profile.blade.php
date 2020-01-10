@@ -38,10 +38,10 @@
                         </div>
                         <div class="row">
                             <div class="col-6">
-                                <label for="birthday">Дата рождения </label>
+                                <label for="birthday_string">Дата рождения </label>
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" id="date" placeholder="Дата"
-                                           name="birthday" required>
+                                           name="birthday_string" required>
                                 </div>
                             </div>
                         </div>

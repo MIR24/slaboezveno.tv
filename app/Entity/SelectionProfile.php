@@ -12,7 +12,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $surname
  * @property string $name
  * @property string $patronymic
- * @property string $birthday
  * @property string $country_of_residence
  * @property string $city_of_residence
  * @property string $contact_phone
@@ -21,11 +20,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $agree_to_processing_of_personal_data
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property string $birthday_string
+ * @property-read \App\Entity\User $user
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\SelectionProfile newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\SelectionProfile newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\SelectionProfile query()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\SelectionProfile whereAgreeToProcessingOfPersonalData($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\SelectionProfile whereBirthday($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\SelectionProfile whereBirthdayString($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\SelectionProfile whereCityOfResidence($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\SelectionProfile whereContactPhone($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\SelectionProfile whereCountryOfResidence($value)
@@ -49,7 +50,7 @@ class SelectionProfile extends Model
         'surname',
         'name',
         'patronymic',
-        'birthday',
+        'birthday_string',
         'country_of_residence',
         'city_of_residence',
         'contact_phone',

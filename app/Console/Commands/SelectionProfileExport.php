@@ -59,7 +59,7 @@ class SelectionProfileExport extends Command
             'surname',
             'selection_profile.name as name',
             'patronymic',
-            'birthday',
+            'birthday_string',
             'country_of_residence',
             'city_of_residence',
             'contact_phone',
