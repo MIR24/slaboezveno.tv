@@ -62,4 +62,9 @@ class SelectionProfile extends Model
     {
         return (new \ArrayObject($this->fillable))->getArrayCopy();
     }
+
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }
