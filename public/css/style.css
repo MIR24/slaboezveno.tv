@@ -931,3 +931,9 @@ vertical-align:middle;
 .daterangepicker {
     color: black !important;
 }
+
+img.linkImageInFooter {
+    display: inline-block;
+    height: 112px;
+    width: 112px;
+}

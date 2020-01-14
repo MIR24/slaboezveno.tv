@@ -5,22 +5,16 @@
                 <div class="row">
                     <div class="col">
                         <a href="http://www.mirtv.ru">
-                            <img src="/images/footer/Group 31@2x.png" alt="">
+                            <img src="/images/footer/Group 31@2x.png" alt="" class="linkImageInFooter">
                         </a>
-                    </div>
-                    <div class="col">
                         <a href="https://mir24.tv">
-                            <img src="/images/footer/Repeat Grid 10@2x.png" alt="">
+                            <img src="/images/footer/Repeat Grid 10@2x.png" alt="" class="linkImageInFooter">
                         </a>
-                    </div>
-                    <div class="col">
                         <a href="http://mirpremium.tv">
-                            <img src="/images/footer/Group 29@2x.png" alt="">
+                            <img src="/images/footer/Group 29@2x.png" alt="" class="linkImageInFooter">
                         </a>
-                    </div>
-                    <div class="col">
                         <a href="http://radiomir.fm">
-                            <img src="/images/footer/Group 16@2x.png" alt="">
+                            <img src="/images/footer/Group 16@2x.png" alt="" class="linkImageInFooter">
                         </a>
                     </div>
                 </div>
