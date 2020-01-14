@@ -45,7 +45,7 @@ class SelectionQuestionTableSeeder extends Seeder
                 'answer' => 'Тесей',
             ],
             [
-                'question' => 'Цефазолин -это витаминам или антибиотик?',
+                'question' => 'Цефазолин - это витамин или антибиотик?',
                 'answer' => 'Антибиотик',
             ],
             [
