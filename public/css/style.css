@@ -328,7 +328,7 @@ background: linear-gradient(0deg, rgba(19,119,236,1) 0%, rgba(0,63,98,1) 100%);
 
 	border-top:2px solid #1B4B69 ;
 	font-size: 29px;
-	font-family: HeliosExtBlackC;
+	/*font-family: HeliosExtBlackC;*/
 	text-transform: uppercase;
 	text-align: center;
 
@@ -348,7 +348,7 @@ background: linear-gradient(0deg, rgba(19,119,236,1) 0%, rgba(0,63,98,1) 100%);
 
 	border-top:4px solid #1B4B69 ;
 	font-size: 29px;
-	font-family: HeliosExtBlackC;
+	/*font-family: HeliosExtBlackC;*/
 	text-transform: uppercase;
 	text-align: center;
         -webkit-transition: all 250ms ease-in-out;
@@ -385,7 +385,7 @@ background: linear-gradient(0deg, rgba(19,119,236,1) 0%, rgba(0,63,98,1) 100%);
 
 	border-top:4px solid #1B4B69 ;
 	font-size: 1.3vw;
-	font-family: HeliosExtBlackC;
+	/*font-family: HeliosExtBlackC;*/
 	text-transform: uppercase;
 	text-align: center;
         -webkit-transition: all 250ms ease-in-out;
@@ -666,7 +666,7 @@ height: auto;}
 	position:absolute;
 	font-size:240px;
 	color:#1173E2;
-	font-family: HeliosExtBlackC!important;
+	/*font-family: HeliosExtBlackC!important;*/
 }
 
 .tags{
