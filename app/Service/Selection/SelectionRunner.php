@@ -160,6 +160,8 @@ class SelectionRunner
         }
         $filteredStr1 = preg_replace('/[^a-zа-яё\d]/ui', '', $str1);
         $filteredStr2 = preg_replace('/[^a-zа-яё\d]/ui', '', $str2);
+        $filteredStr1 = preg_replace('/ё/ui', 'е', $filteredStr1);
+        $filteredStr2 = preg_replace('/ё/ui', 'е', $filteredStr2);
         return strcmp(mb_strtoupper($filteredStr1, $encoding), mb_strtoupper($filteredStr2, $encoding));
     }
 

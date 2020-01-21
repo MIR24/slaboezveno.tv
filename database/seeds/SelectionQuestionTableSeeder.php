@@ -14,7 +14,7 @@ class SelectionQuestionTableSeeder extends Seeder
         $questions = [
             [
                 'question' => 'Как называется отец мужа?',
-                'answer' => 'Свёкр',
+                'answer' => 'Свёкор',
             ],
             [
                 'question' => 'Столица США?',
