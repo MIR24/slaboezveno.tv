@@ -132,7 +132,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col divider_h"></div>
-                <div class="text-center header2"> ПРОМО</div>
+                <div class="text-center header2"> ВИДЕО</div>
                 <div class="col  divider_h"></div>
             </div>
         </div>
@@ -140,6 +140,10 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col text-center">
+                    <iframe width="100%" style="max-width:560px;" height="315"
+                            src="https://www.youtube.com/embed/0GGyAWIGbmE" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
                     <iframe width="100%" style="max-width:560px;" height="315"
                             src="https://www.youtube.com/embed/XsjUBfn7J84" frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
