@@ -42,32 +42,24 @@ class SelectionProfileExport extends Command
     public function handle()
     {
         $labels = [
-            'Фамилия',
-            'Имя',
-            'Отчество',
-            'Дата рождения',
-            'Страна проживания',
+            'ФИО',
             'Город проживания',
             'Контактный телефон',
             'Email',
-            'Соцсеть',
+            'Профессия',
+            'Дата рождения',
             'Видеовизитка',
-            'Создано',
-            'Обновлено',
+            'Соцсеть',
         ];
         $columns = [
-            'surname',
             'selection_profile.name as name',
-            'patronymic',
-            'birthday_string',
-            'country_of_residence',
             'city_of_residence',
             'contact_phone',
             'users.email as email',
-            'link_to_social_network',
+            'profession',
+            'birthday_string',
             'link_to_video_card',
-            'selection_profile.created_at as created_at',
-            'selection_profile.updated_at as updated_at',
+            'link_to_social_network',
         ];
 
         $dateBegin = new \DateTimeImmutable(self::INTERVAL);
