@@ -11,16 +11,7 @@
                         @csrf
                         <div class="row">
                             <div class="col">
-                                <label for="form1">Фамилия</label>
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" id="form1" aria-describedby="basic-addon3"
-                                           name="surname" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <label for="form2">Имя</label>
+                                <label for="form2">Фамилия Имя Отчество</label>
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" id="form2" aria-describedby="basic-addon3"
                                            name="name" required>
@@ -29,16 +20,7 @@
                         </div>
                         <div class="row">
                             <div class="col">
-                                <label for="form3">Отчество</label>
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" id="form3" aria-describedby="basic-addon3"
-                                           name="patronymic">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-6">
-                                <label for="birthday_string">Дата рождения </label>
+                                <label for="birthday_string">Дата рождения</label>
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" id="date" placeholder="Дата"
                                            name="birthday_string" required>
@@ -46,13 +28,6 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col">
-                                <label for="form4">Страна проживания</label>
-                                <div class="input-group mb-3">
-                                    <input type="text" class="form-control" id="form4" aria-describedby="basic-addon3"
-                                           name="country_of_residence" required>
-                                </div>
-                            </div>
                             <div class="col">
                                 <label for="form5">Город проживания</label>
                                 <div class="input-group mb-3">

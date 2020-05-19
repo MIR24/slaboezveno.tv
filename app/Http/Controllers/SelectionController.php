@@ -103,6 +103,12 @@ class SelectionController extends Controller
             if ($profile->patronymic === null) {
                 $profile->patronymic = '';
             }
+            if ($profile->surname === null) {
+                $profile->surname = '';
+            }
+            if ($profile->country_of_residence === null) {
+                $profile->country_of_residence = '';
+            }
             $profile->user_id = $user->getId();
             $profile->save();
 
