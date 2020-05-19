@@ -54,6 +54,15 @@
                         </div>
                         <div class="row">
                             <div class="col">
+                                <label for="form3">Профессия</label>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" id="form3" aria-describedby="basic-addon3"
+                                           name="profession" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
                                 <label for="form8">Ссылка на аккаунт в любой социальной сети</label>
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" id="form8" aria-describedby="basic-addon3"

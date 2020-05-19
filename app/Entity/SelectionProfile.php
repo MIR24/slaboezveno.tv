@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $country_of_residence
  * @property string $city_of_residence
  * @property string $contact_phone
+ * @property string $profession
  * @property string $link_to_social_network
  * @property string $link_to_video_card
  * @property int $agree_to_processing_of_personal_data
@@ -32,6 +33,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\SelectionProfile whereCountryOfResidence($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\SelectionProfile whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\SelectionProfile whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\SelectionProfile whereProfession($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\SelectionProfile whereLinkToSocialNetwork($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\SelectionProfile whereLinkToVideoCard($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Entity\SelectionProfile whereName($value)
@@ -54,6 +56,7 @@ class SelectionProfile extends Model
         'country_of_residence',
         'city_of_residence',
         'contact_phone',
+        'profession',
         'link_to_social_network',
         'link_to_video_card',
         'agree_to_processing_of_personal_data'
