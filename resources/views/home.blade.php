@@ -139,11 +139,11 @@
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col text-center">
+                <div class="col text-center" style="position: relative; height: 0; padding-top: 56.25%; overflow: hidden;">
                     @foreach( [
                         "https://www.youtube.com/embed/videoseries?list=PLBZo8U17p9gzEwllwhVFB2-5rUbd4yHAp"
                     ] as $iframeSrc )
-                        <iframe width="100%" style="max-width:560px;" height="315" frameborder="0"
+                        <iframe width="100%" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;" frameborder="0"
                                 src="{{ $iframeSrc }}"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
