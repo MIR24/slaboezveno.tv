@@ -141,14 +141,11 @@
             <div class="row">
                 <div class="col text-center">
                     @foreach( [
-                        "https://www.youtube.com/embed/SzWMt1rqzVw",
-                        "https://www.youtube.com/embed/-X-_TZbSWz0",
-                        "https://www.youtube.com/embed/9SemO4bFlA4",
-                        "https://www.youtube.com/embed/0GGyAWIGbmE"
+                        "https://www.youtube.com/embed/videoseries?list=PLBZo8U17p9gzEwllwhVFB2-5rUbd4yHAp"
                     ] as $iframeSrc )
                         <iframe width="100%" style="max-width:560px;" height="315" frameborder="0"
                                 src="{{ $iframeSrc }}"
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                 allowfullscreen></iframe>
 
                     @endforeach
