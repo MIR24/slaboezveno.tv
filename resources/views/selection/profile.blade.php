@@ -50,6 +50,7 @@
                                     <input type="email" class="form-control" id="exampleFormControlInput1"
                                            name="contact_email" required placeholder="name@example.com" >
                                 </div>
+				<i>Редакция с вами свяжется по электронной почте, которую вы указали</i>
                             </div>
                         </div>
                         <div class="row">
