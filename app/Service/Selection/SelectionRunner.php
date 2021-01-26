@@ -114,6 +114,9 @@ class SelectionRunner
         if (0 === $this->mb_strcasecmp($textAnswer, $passing->question->answer)) {
             $this->closeAfterSuccessAnswer($passing);
             return true;
+        } elseif ($this->matchPattern($textAnswer, $passing->question->answer)) {
+            $this->closeAfterSuccessAnswer($passing);
+            return true;
         }
 
         $this->closeAfterFailAnswer($passing);
@@ -153,16 +156,33 @@ class SelectionRunner
     // TODO? public function isFilledProfile(User $user): bool
 
 
-    private function mb_strcasecmp($str1, $str2, $encoding = null)
+    private function prepareStringAnswers(string $actual, string $expected, $encoding = null): array
     {
         if (null === $encoding) {
             $encoding = mb_internal_encoding();
         }
-        $filteredStr1 = preg_replace('/[^a-zа-яё\d]/ui', '', $str1);
-        $filteredStr2 = preg_replace('/[^a-zа-яё\d]/ui', '', $str2);
-        $filteredStr1 = preg_replace('/ё/ui', 'е', $filteredStr1);
-        $filteredStr2 = preg_replace('/ё/ui', 'е', $filteredStr2);
-        return strcmp(mb_strtoupper($filteredStr1, $encoding), mb_strtoupper($filteredStr2, $encoding));
+        $filteredActual = preg_replace('/[^a-zа-яё\d]/ui', '', $actual);
+        $filteredExpected = preg_replace('/[^a-zа-яё\d]/ui', '', $expected);
+        $filteredActual = preg_replace('/ё/ui', 'е', $filteredActual);
+        $filteredExpected = preg_replace('/ё/ui', 'е', $filteredExpected);
+        $filteredActual = mb_strtoupper($filteredActual, $encoding);
+        $filteredExpected = mb_strtoupper($filteredExpected, $encoding);
+        return [$filteredActual, $filteredExpected];
+    }
+
+    private function mb_strcasecmp($str1, $str2, $encoding = null)
+    {
+        $preparedStrings = $this->prepareStringAnswers($str1, $str2, $encoding);
+        return strcmp($preparedStrings[0], $preparedStrings[1]);
+    }
+
+    private function matchPattern(string $actual, string $expected): bool
+    {
+        [$filteredActual, $filteredExpected] = $this->prepareStringAnswers($actual, $expected);
+
+        $pos = mb_stripos($filteredActual, $filteredExpected);
+
+        return is_int($pos);
     }
 
     /**
